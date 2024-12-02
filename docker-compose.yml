@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  registry:
+    container_name: asta-registry # Name of the service
+    image: registry:2 # Image of the service
+    ports:
+      - "5500:5000" # Port mapping => host:container
+    environment:
+      REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /var/lib/registry # Environment variable
+    volumes:
+      - registry-data:/var/lib/registry # Volume mapping => host:container
+
+volumes:
+  registry-data:
