@@ -29,5 +29,5 @@ jobs:
           git pull origin main
 
           # Run docker-compose to start the services
-          docker-compose up -d
+          sudo docker compose up -d
           EOF
