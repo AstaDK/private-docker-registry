@@ -16,6 +16,8 @@ services:
       REGISTRY_HTTP_HEADERS_Access-Control-Allow-Credentials: "[true]"
     volumes:
       - registry-data:/var/lib/registry # Volume mapping => host:container
+    networks:
+      - registry-network
 
   registry-ui:
     image: joxit/docker-registry-ui:main
@@ -40,6 +42,12 @@ services:
     container_name: asta-registry-ui
     depends_on:
       - registry
+    networks:
+      - registry-network
 
 volumes:
   registry-data:
+
+networks:
+  registry-network:
+    driver: bridge
