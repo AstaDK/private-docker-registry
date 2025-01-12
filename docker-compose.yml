@@ -9,7 +9,7 @@ services:
       - "5500:5000" # Port mapping => host:container
     environment:
       REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /var/lib/registry
-      REGISTRY_HTTP_HEADERS_Access-Control-Allow-Origin: "['*']" # Replace with your registry UI URL
+      REGISTRY_HTTP_HEADERS_Access-Control-Allow-Origin: "['https://registry-ui.astalife.co']" # Replace with your registry UI URL
       REGISTRY_HTTP_HEADERS_Access-Control-Allow-Headers: "[Authorization,Accept,Cache-Control]"
       REGISTRY_HTTP_HEADERS_Access-Control-Allow-Methods: "[HEAD,GET,OPTIONS,DELETE]"
       REGISTRY_HTTP_HEADERS_Access-Control-Expose-Headers: "[Docker-Content-Digest]"
